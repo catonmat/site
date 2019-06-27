@@ -1,0 +1,152 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Lato", sans-serif;
+  color: #464646;
+}
+
+.container-table {
+  width: 1000px;
+  height: 555px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 40px 0px 40px;
+  overflow-y: scroll;
+  box-shadow: 2px 2px 10px 5px #F1F1F1;
+}
+
+.container-pageheader {
+  width: 1000px;
+  height: 100px;
+  padding: 0px 20px 40px 20px;
+  position: relative;
+}
+
+.h2-ordernumber {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  font-weight: 600;
+}
+
+.btn-group {
+  position: absolute;
+  right: 10px;
+  top: 30px;
+}
+
+
+
+
+
+.table-orders {
+  width: 100%;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn-group button {
+  margin: 0px 35px 0px 0px;
+  border: none;
+  width: 170px;
+  height: 45px;
+  background-color: #FF9900;
+  border-radius: 100px;
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+}
+
+.btn-group button:hover {
+  background-color: white;
+  color: #FF9900;
+  border: 1px solid #FF9900;
+}
+
+.h2-ordernumber {
+  margin: 0px 0px 20px 20px;
+}
+
+
+
+
+
+table {
+  border-spacing: 0;
+}
+
+tr, td, th {
+  // border: 1px solid red;
+  text-align: left;
+}
+
+th {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 10px;
+  position: sticky;
+  z-index: 10;
+  top: 99px;
+  background-color: white;
+}
+
+td {
+  padding: 10px 0px 10px 0px;
+}
+
+.container-tableheader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  background-color: white;
+  padding: 20px 0 20px 0;
+}
+
+.completed {
+  color: green;
+}
+
+.pending {
+  color: orange;
+}
+
+.incomplete {
+  color: red;
+}
+
+
+
+
+
+
+
+.filter-container {
+  position: relative;
+}
+
+select {
+  width: 150px;
+  height: 34px;
+  padding: 5px 10px 5px 10px;
+  margin: 5px 15px 5px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #172B4F;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  background: url(https://res.cloudinary.com/dtmuylvrr/image/upload/c_scale,h_15/v1561490685/chevron-down-solid.svg) 90% / 5% no-repeat;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+

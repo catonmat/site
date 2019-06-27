@@ -1,0 +1,141 @@
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  color: #464646; }
+
+.container-pageheader {
+  width: 62.5rem;
+  height: 6.25rem;
+  padding-top: 0rem;
+  padding-right: 1.25rem;
+  padding-bottom: 2.5rem;
+  padding-left: 1.25rem;
+  position: relative; }
+  .container-pageheader h2 {
+    margin-top: 0rem;
+    margin-right: 0rem;
+    margin-bottom: 1.25rem;
+    margin-left: 1.25rem;
+    top: 1.875rem;
+    right: auto;
+    bottom: auto;
+    left: 1.875rem;
+    position: absolute;
+    font-weight: 600; }
+  .container-pageheader .btn-group {
+    top: 1.875rem;
+    right: 1.875rem;
+    bottom: auto;
+    left: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    position: absolute; }
+    .container-pageheader .btn-group button {
+      margin-top: 0rem;
+      margin-right: 2.1875rem;
+      margin-bottom: 0rem;
+      margin-left: 0rem;
+      width: 10.625rem;
+      height: 2.8125rem;
+      border: none;
+      background-color: #FF9900;
+      font-size: 1.4375rem;
+      border-radius: 6.25rem;
+      font-weight: 600;
+      color: white; }
+      .container-pageheader .btn-group button:hover {
+        background-color: white;
+        color: #FF9900;
+        border: 0.0625rem solid #FF9900; }
+
+.container-tableheader {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 1.25rem;
+  padding-right: 0rem;
+  padding-bottom: 1.25rem;
+  padding-left: 0rem;
+  top: 0rem;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  background-color: white;
+  position: sticky;
+  z-index: 10; }
+  .container-tableheader .filter-container {
+    position: relative; }
+    .container-tableheader .filter-container select {
+      width: 9.375rem;
+      height: 2.125rem;
+      padding-top: 0.3125rem;
+      padding-right: 0.625rem;
+      padding-bottom: 0.3125rem;
+      padding-left: 0.625rem;
+      margin-top: 0.3125rem;
+      margin-right: 0.9375rem;
+      margin-bottom: 0.3125rem;
+      margin-left: 0.9375rem;
+      font-size: 0.875rem;
+      color: #172B4F;
+      font-weight: 600;
+      border: 0.0625rem solid #ccc;
+      border-radius: 6.25rem;
+      background: url(https://res.cloudinary.com/dtmuylvrr/image/upload/c_scale,h_15/v1561490685/chevron-down-solid.svg) 90%/5% no-repeat;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none; }
+
+.container-table {
+  width: 62.5rem;
+  height: 34.6875rem;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0rem;
+  padding-right: 2.5rem;
+  padding-bottom: 0rem;
+  padding-left: 2.5rem;
+  box-shadow: 0.125rem 0.125rem 0.625rem 0.3125rem #F1F1F1;
+  overflow-y: scroll; }
+  .container-table table {
+    width: 100%;
+    height: auto;
+    border-spacing: 0; }
+    .container-table table tr, .container-table table td, .container-table table th {
+      text-align: left; }
+    .container-table table th {
+      padding-top: 0rem;
+      padding-right: 0rem;
+      padding-bottom: 0.625rem;
+      padding-left: 0rem;
+      top: 6.1875rem;
+      right: auto;
+      bottom: auto;
+      left: auto;
+      border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.1);
+      background-color: white;
+      position: sticky;
+      z-index: 10; }
+    .container-table table td {
+      padding-top: 0.625rem;
+      padding-right: 0rem;
+      padding-bottom: 0.625rem;
+      padding-left: 0rem; }
+    .container-table table .completed {
+      color: green; }
+    .container-table table .pending {
+      color: orange; }
+    .container-table table .incomplete {
+      color: red; }
+
+/*# sourceMappingURL=style.css.map */

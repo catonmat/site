@@ -1,0 +1,191 @@
+// pixel to rem converter
+@function calculateREM($size, $unit: "px") {
+  @if($unit == "px"){
+    $rem-base: 16;
+    $remSize: $size / $rem-base;
+    @return #{$remSize}rem;
+  }
+}
+
+// Global Variables
+$body-font-family: "Lato", sans-serif;
+$body-font-color: #464646;
+$body-font-weight: 600;
+
+//Header Variables
+$btn-font-size: calculateREM(23, "px");
+$btn-font-color: white;
+$btn-bg-color: #FF9900;
+$btn-hover-bg-color: white;
+$btn-hover-font-color: #FF9900;
+$btn-hover-border: calculateREM(1, "px") solid $btn-bg-color;
+
+// Dropdown Filter Variables
+$filter-font-size: calculateREM(14, "px");
+$filter-font-color: #172B4F;
+$filter-border: calculateREM(1, "px") solid #ccc;
+$filter-border-radius: calculateREM(100, "px");
+
+// Table Body Variables
+$table-box-shadow: calculateREM(2, "px") calculateREM(2, "px") calculateREM(10, "px") calculateREM(5, "px") #F1F1F1;
+$table-border-spacing: 0;
+$table-header-border-bottom: calculateREM(1, "px") solid rgba(0,0,0,0.1);
+$table-header-bg-color: white;
+$table-z-index: 10;
+$table-data-completed-font-color: green;
+$table-data-pending-font-color: orange;
+$table-data-incomplete-font-color: red;
+
+// Mixins: Dimensions, padding, margin & positioning
+@mixin dimensions($width, $height, $unit) {
+  @if($unit == "px") {
+    width: if($width == "auto", auto, calculateREM($width));
+    height: if($height == "auto", auto, calculateREM($height));
+  } @else {
+    width: if($width == "auto", auto, #{$width+$unit});
+    height: if($height == "auto", auto, #{$height+$unit});
+  }
+}
+@mixin padding($top, $right, $bottom, $left, $unit) {
+  @if($unit == "px") {
+    padding-top: calculateREM($top);
+    padding-right: calculateREM($right);
+    padding-bottom: calculateREM($bottom);
+    padding-left: calculateREM($left);
+  } @else {
+    padding: $top $right $bottom $left;
+  }
+}
+@mixin margin($top, $right, $bottom, $left, $unit) {
+  @if($unit == "px") {
+    margin-top: calculateREM($top);
+    margin-right: calculateREM($right);
+    margin-bottom: calculateREM($bottom);
+    margin-left: calculateREM($left);
+  } @else {
+    margin: $top $right $bottom $left;
+  }
+}
+@mixin position($top, $right, $bottom, $left, $unit) {
+  @if($unit == "px") {
+    top: if($top == "auto", auto, calculateREM($top));
+    right: if($right == "auto", auto, calculateREM($top));
+    bottom: if($bottom == "auto", auto, calculateREM($top));
+    left: if($left == "auto", auto, calculateREM($top));
+  } @else {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+  }
+}
+@mixin flexbox($flex-direction: row, $justify-content: center) {
+  display: flex;
+  justify-content: $justify-content;
+  flex-direction: $flex-direction;
+  align-items: center;
+}
+
+// Page Global
+body {
+  @include flexbox(column);
+  font-family: $body-font-family;
+  color: $body-font-color;
+}
+
+// Page Header
+.container-pageheader {
+  @include dimensions(1000, 100, "px");
+  @include padding(0, 20, 40, 20, "px");
+  position: relative;
+  h2 {
+    @include margin(0, 0, 20, 20, "px");
+    @include position(30, auto, auto, 10, "px");
+    position: absolute;
+    font-weight: $body-font-weight;
+  }
+  .btn-group {
+    @include position(30, 2, auto, auto, "px");
+    @include flexbox();
+    position: absolute;
+    button {
+      @include margin(0, 35, 0, 0, "px");
+      @include dimensions(170, 45, "px");
+      border: none;
+      background-color: $btn-bg-color;
+      font-size: $btn-font-size;
+      border-radius: calculateREM(100, "px");
+      font-weight: $body-font-weight;
+      color: $btn-font-color;
+      &:hover {
+        background-color: $btn-hover-bg-color;
+        color: $btn-hover-font-color;
+        border: $btn-hover-border;
+      }
+    }
+  }
+}
+
+// Table Header
+.container-tableheader {
+  @include dimensions(100, 15, "%");
+  @include flexbox(row, space-between);
+  @include padding(20, 0, 20, 0, "px");
+  @include position(0, auto, auto, auto, "px");
+  background-color: $table-header-bg-color;
+  position: sticky;
+  z-index: $table-z-index;
+  .filter-container {
+    position: relative;
+    select {
+      @include dimensions(150, 34, "px");
+      @include padding(5, 10, 5, 10, "px");
+      @include margin(5, 15, 5, 15, "px");
+      font-size: $filter-font-size;
+      color: $filter-font-color;
+      font-weight: $body-font-weight;
+      border: $filter-border;
+      border-radius: $filter-border-radius;
+      background: url(https://res.cloudinary.com/dtmuylvrr/image/upload/c_scale,h_15/v1561490685/chevron-down-solid.svg) 90% / 5% no-repeat;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+  }
+}
+
+// Table Body
+.container-table {
+  @include dimensions(1000, 555, "px");
+  @include flexbox(column, flex-start);
+  @include padding(0, 40, 0, 40, "px");
+  box-shadow: $table-box-shadow;
+  overflow-y: scroll;
+  table {
+    @include dimensions(100, auto, "%");
+    border-spacing: $table-border-spacing;
+    tr, td, th {
+      text-align: left;
+    }
+    th {
+      @include padding(0, 0, 10, 0, "px");
+      @include position(99, auto, auto, auto, "px");
+      border-bottom: $table-header-border-bottom;
+      background-color: $table-header-bg-color;
+      position: sticky;
+      z-index: $table-z-index;
+    }
+    td {
+      @include padding(10, 0, 10, 0, "px");
+    }
+    .completed {
+      color: $table-data-completed-font-color;
+    }
+    .pending {
+      color: $table-data-pending-font-color;
+    }
+    .incomplete {
+      color: $table-data-incomplete-font-color;
+    }
+  }
+}
